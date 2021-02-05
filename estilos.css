@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  background-color: #000;
+  color: #FFF;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.datosPlano {
+  width: 100vw;
+  display: flex;
+  margin-top: 2rem;
+}
+
+.datosPlano canvas {
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 0 auto;
+}
+
+.datosPlano form {
+  width: 17rem;
+  height: 19rem;
+}
+
+.datosPlano form label {
+  margin-left: 1.5rem;
+  font-size: 1.2rem;
+}
+
+input[type="number"] {
+  display: block;
+  outline: none;
+  border: 0;
+  height: 1.5rem;
+  width: 100%;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #FFF;
+  text-align: center;
+}
+
+.inputAnimado {
+  width: 12rem;
+  height: 1.5rem;
+  margin: 1rem;
+  position: relative;
+}
+
+/*::before y ::after se comportan como divs vacios*/
+.inputAnimado::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #2196f3;
+  position: absolute;
+  left: 0.4rem;
+  bottom: 0;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  transition: all 0.5s;
+}
+
+.inputAnimado:hover::before {
+  width: 88%;
+}
+
+input[type="button"] {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #FFF;
+  border: 0;
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Neon Light 'Calcular raíces' and 'Hacer otro cálculo' Button Animation Effects on Hover */
+#botonCalcular:hover {
+  background-color: #2196f3;
+  color: #000;
+  text-shadow: 0 0 10px #000, 0 0 40px #000, 0 0 80px #000;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  transition-delay: 0.15s;
+}
+
+#botonBorrar:hover {
+  background-color: #36fcf4;
+  color: #000;
+  text-shadow: 0 0 10px #000, 0 0 40px #000, 0 0 80px #000;
+  box-shadow: 0 0 10px #36fcf4, 0 0 40px #36fcf4, 0 0 80px #36fcf4;
+  transition-delay: 0.15s;
+}
+
+p {
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .datosPlano {
+    flex-direction: column;
+  }
+  
+  .datosPlano form {
+    margin: 0 auto;
+    height: auto;
+    text-align: center;
+  }
+  
+  .datosPlano form label {
+    font-size: 2rem;
+  }
+  
+  .datosPlano canvas {
+    margin-top: 2rem;
+  }
+  
+  input[type="number"] {
+    margin: 1rem auto;
+  }
+}

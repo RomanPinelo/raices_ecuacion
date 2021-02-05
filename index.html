@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+ 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raíces cuadráticas</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+  </head>
+
+  <body>
+    <h1>Raíces de una ecuación cuadrática</h1>
+    <div class="datosPlano">
+      <form>
+        <label for="valorA">Ingrese el valor de a:</label>
+        <div class="inputAnimado"><input type="number" id="valorA" value=""></div>
+        <label for="valorB">Ingrese el valor de b:</label>
+        <div class="inputAnimado"><input type="number" id="valorB" value=""></div>
+        <label for="valorC">Ingrese el valor de c:</label>
+        <div class="inputAnimado"><input type="number" id="valorC" value=""></div>
+        <input type="button" value="Calcular raices" id="botonCalcular">
+      </form>
+      <canvas width="300" height="300" id="plano"></canvas>
+    </div>
+    <p id="ecuacion"></p>
+    <p id="valorx1"></p>
+    <p id="valorx2"></p>
+    <input type="button" value="Hacer otro cálculo" id="botonBorrar">
+    <script src="calculo.js"></script>
+  </body>
+  
+</html>
