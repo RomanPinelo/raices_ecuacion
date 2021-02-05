@@ -45,4 +45,4 @@ En los botones también se pusieron efectos hover.
 
 En el siguiente link puedes ver la página funcionando: 
 
-https://romanpinelo.github.io/raices_ecuacion/
+https://romanpinelo.github.io/
