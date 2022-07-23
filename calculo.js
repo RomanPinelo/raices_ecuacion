@@ -17,6 +17,8 @@ function calcularRaices() {
   var a = valora.value;
   var b = valorb.value;
   var c = valorc.value;
+
+  var ecuacion = "";
   
   var x1,x2; //Raíces
   
@@ -25,6 +27,32 @@ function calcularRaices() {
   
   var radicando = (Math.pow(b, 2)) - (4 * a * c);
   
+  // Pintando en el DOM la ecuación
+  if (a == 1) {
+    ecuacion = `x<sup>2</sup>`;
+  } else if (a == -1) {
+    ecuacion = `-x<sup>2</sup>`;
+  } else {
+    ecuacion = `${a}x<sup>2</sup>`;
+  }
+
+  if (b == 1) {
+    ecuacion += ` + x`;
+  } else if (b == -1) {
+    ecuacion += ` - x`;
+  } else if (b > 0) {
+    ecuacion += ` + ${b}x`;
+  } else {
+    ecuacion += ` - ${Math.abs(b)}x`;
+  }
+
+  if (c > 0) {
+    ecuacion += ` + ${c} = 0`;
+  } else {
+    ecuacion += ` - ${Math.abs(c)} = 0`;
+  }
+
+  document.getElementById('ecuacion').innerHTML = ecuacion;
   
   //Borrando el canvas
   lienzo.clearRect(0, 0, d.width, d.height);
@@ -53,7 +81,6 @@ function calcularRaices() {
   if(radicando == 0){
     x1 = (-1 * b) / (2 * a);
     
-    document.getElementById('ecuacion').innerHTML = a + "x^2 + " + b + "x + " + c + " = 0";
     document.getElementById('valorx1').innerHTML = "El valor de ambas raíces es: " + x1;
     document.getElementById('valorx2').innerHTML = "";
     
@@ -68,7 +95,6 @@ function calcularRaices() {
     x1 = ((-1 * b) + Math.sqrt(radicando)) / (2 * a);
     x2 = ((-1 * b) - Math.sqrt(radicando)) / (2 * a);
     
-    document.getElementById('ecuacion').innerHTML = a + "x^2 + " + b + "x + " + c + " = 0";
     document.getElementById('valorx1').innerHTML = "El valor de x1 es: " + x1.toFixed(2);
     document.getElementById('valorx2').innerHTML = "<br>El valor de x2 es: " + x2.toFixed(2);
     
@@ -103,7 +129,6 @@ function calcularRaices() {
     x1 = ((-1 * b) + Math.sqrt(radicando)) / (2 * a);
     x2 = ((-1 * b) - Math.sqrt(radicando)) / (2 * a);
     
-    document.getElementById('ecuacion').innerHTML = a + "x^2 + " + b + "x + " + c + " = 0";
     document.getElementById('valorx1').innerHTML = "El valor de x1 es: " + x1.toFixed(2);
     document.getElementById('valorx2').innerHTML = "<br>El valor de x2 es: " + x2.toFixed(2);
   }
